@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+
+<div class="upload-top-details m-2">
+    <a href="/home">previous</a>
+</div>
+
+<div class="upload-post flex flex-col justify-center items-center h-[60vh] w-full sm:w-[80%] md:w-[60%] sm:mx-auto md:mx-auto gap-2">
+    <div class="uplod-box border border-solid border-zinc-400 w-[20vh] h-[20vh] rounded-full flex justify-center items-center p-8">
+        <img src="/images/uploadicon.jpg" alt="" class="w-[80%] h-[80%] cursor-pointer">
+    </div>
+    <p class="text-red-600 font-semibold cursor-pointer mb-5" id="uploadImage">Upload Image</p>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="w-full flex flex-col justify-center items-center gap-3">
+        <input type="file" hidden name="image" id="upload-image">
+    <textarea name="caption" placeholder="write a caption.." class="w-[90%] h-[8vh] bg-black text-white border border-zinc-400 rounded-md p-2"></textarea>
+    <input type="submit" value="Post" class="bg-emerald-600 text-white w-[90%] h-[6vh] rounded-md cursor-pointer">
+</form>
+</div>
+<script>
+    document.querySelector("#uploadImage").addEventListener("click", () => {
+        document.querySelector("#upload-image").click()
+    })
+</script>
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+
+<div class="login-container h-screen w-full flex flex-col justify-center items-center gap-10">
+
+    <h1 class="text-3xl">Connectify</h1>
+    <form action="/login" method="post" class="w-full md:w-[60%]">
+    <!-- input box -->
+    <div class="input-box flex flex-col justify-center items-center w-full">
+        <input type="text" name="username" placeholder="username" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 outline-none text-black">
+        <input type="password" name="password" placeholder="*****" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 outline-none text-black">
+        <input type="submit" value="Login" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 bg-emerald-600 cursor-pointer ">    
+
+        <!-- login and register link  -->
+        <div class="login-register">
+            <a href="/">New User? <span class="text-red-600 font-bold ">Register Here</span></a>
+        </div>
+        </form>
+    </div>
+
+        
+</div>
+
+<% include ./partials/footer.ejs %>

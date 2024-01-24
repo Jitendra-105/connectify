@@ -1,0 +1,26 @@
+<% include ./partials/header.ejs %>
+
+<div class="register-container h-screen w-full flex flex-col justify-center items-center gap-10">
+
+    <h1 class="text-3xl">Connectify</h1>
+
+    <!-- input box -->
+    <div class="input-box w-full md:w-[60%]">
+        <form action="/register" method="post" class="flex flex-col justify-center items-center w-full">
+        <input type="text" name="username" placeholder="username" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 outline-none text-zinc-800">
+        <input type="text" name="name" placeholder="name" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 outline-none text-zinc-800">
+        <input type="email" name="email" placeholder="abc@gmail.com" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 outline-none text-zinc-800">
+        <input type="password" name="password" placeholder="*****" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 outline-none text-zinc-800">
+        <input type="submit" value="Register" class="w-[60%] h-[6vh] rounded-xl mb-6 p-3 bg-emerald-600 cursor-pointer">    
+    
+        <!-- login and register link  -->
+        <div class="login-register">
+            <a href="/login">Already have an account? <span class="text-red-600 font-bold "> Login Here</span></a>
+        </div>
+    </form>
+    </div>
+
+        
+</div>
+
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,28 @@
+<% include ./partials/header.ejs %>
+
+<div class="edit-container">
+    <div class="top-edit-details flex justify-between items-center p-4">
+        <a href="/profile">profile</a>
+        <p>Edit Profile</p>
+        <a href="/home">Home</a>
+    </div>
+
+    <div class="editprofile-section w-full h-[30vh] flex flex-col justify-center items-center gap-2">
+        <img src="/images/uploads/<%=user.profileImage %>" alt="" class="w-[12vh] h-[12vh] rounded-full object-cover">
+        <h3 class="text-red-600 font-semibold">Edit Picture</h3>
+    </div>
+
+    <form action="/update" method="post" enctype="multipart/form-data" class="w-full"> 
+        <h3>Edit Account Details</h3>
+        <hr class="mt-2 mb-3 border-t-2 h-2">
+        <input type="file" name="image" id="imageinput">
+        <!-- here usernam, name and bio is passed within value to show the actual data in input field  -->
+        <input type="text" name="username" value="<%= user.username%>" placeholder="username" class="block my-5 p-2  w-[96%] mx-auto text-white bg-zinc-800 h-[6vh]">
+        <input type="text" name="name" value="<%= user.name%>" placeholder="name" class="block my-5 p-2 mx-auto w-[96%] text-white bg-zinc-800 h-[6vh]">
+        <textarea name="bio" placeholder="enter bio here.." class="block my-5 p-2 mx-auto w-[96%] text-white bg-zinc-800 ">"<%= user.bio%>"</textarea> 
+        <input type="submit" value="Update Details" class="bg-emerald-600 p-2 rounded-md w-[96%] ml-2">
+        
+    </form>
+</div>
+
+<% include ./partials/footer.ejs %>

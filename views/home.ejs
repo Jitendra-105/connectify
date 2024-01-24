@@ -1,0 +1,46 @@
+<% include ./partials/header.ejs %>
+<div class="home-container p-3 w-full">
+
+  <!-- navbar  -->
+  <nav class="flex justify-between items-center">
+    <div class="left-nav">
+    <ul>
+      <li><a href="">connectify</a></li>
+    </ul>
+  </div>
+    <div class="right-nav ">
+    <ul class="flex items-center justify-start gap-3">
+      <li><a href="">notification</a></li>
+      <li><a href="">message</a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <!-- feeds  -->
+  <% posts.reverse().forEach(function(elem) { %>
+  <div class="feeds-container mt-5 p-3 md:w-[60%] sm:p-4 sm:mx-auto">
+      <!-- profile  -->
+      <div class="posts-section sm:w-[70%] md:h-full sm:mx-auto">
+      <div class="feed-profile flex justify-start items-start gap-3">
+        <img class="w-12 h-12 rounded-full object-cover" src="/images/uploads/<%= elem.user.profileImage%>" alt="">
+        <h2><%= elem.user.username%></h2>
+      </div>
+      <!-- post created  -->
+      <div class="posts mt-5">
+        <div class="feedsimages w-full h-[36vh]">
+          <img class="w-full h-full object-contain bg-white" src="/images/uploads/<%= elem.picture %>" alt="">
+        </div>
+        <div class="posts-icons flex justify-start items-center gap-6 mt-6 mb-2">
+          <a href="/like/post/<%= elem._id %>"><p>like</p></a>
+          <p><%= elem.likes.length %></p>
+          <p>comment</p>
+          <p>save</p>
+        </div>
+        <p class="my-2"><%= elem.caption%></p>
+      </div>
+    </div>
+      </div>
+    <% })%>
+  
+</div>
+<% include ./partials/footer.ejs %>

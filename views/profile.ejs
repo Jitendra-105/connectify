@@ -1,0 +1,34 @@
+<% include ./partials/header.ejs %>
+
+<div class="profile-container w-full flex flex-col items-start justify-center gap-10">
+
+    <!-- profile-card -->
+    <div class="profile-details flex justify-start items-center gap-8 mt-20 ml-10">
+    <img src="/images/uploads/<%=user.profileImage %>" alt="" class="w-[10vh] h-[10vh] rounded-full border-4 border-pink-600 object-cover">
+    <div class="profile-bottom-details">
+    <h3 class="font-bold tracking-widest my-2"><%=user.username%></h3>
+    <h4 class="text-gray-300 "><%=user.name%></h4>
+    <h5 class="text-gray-300 "><%=user.bio%></h5>
+    </div>
+</div>
+<a href="/edit"><button class="border-2 border-gray-300 p-2 rounded-md ml-10">Edit Profile</button></a>
+
+<!-- profile buttons  -->
+    <div class="profile-buttons w-full">
+        <button class="bg-teal-600 text-white p-2 rounded-md w-[48%] ml-1 md:w-[30vw]">Connections</button>
+        <button class="bg-cyan-700 text-white p-2 rounded-md w-[48%] ml-1 md:w-[30vw]">Requests</button>
+    </div>
+
+<!-- post by user  -->
+
+<div class="posts-uploaded w-full sm:w-[95%] sm:mx-auto flex justify-start items-center flex-wrap gap-3">
+    <% user.posts.forEach(function(post) { %>
+
+        <img src="/images/uploads/<%= post.picture%>" alt="" class="bg-sky-600 w-[45vw] h-[25vh] sm:w-[30vw] sm:h-[40vh]">
+   <% })%>
+    <!-- <img src="" alt="" class="bg-sky-600 w-[45vw] h-[25vh] sm:w-[30vw] sm:h-[40vh]">
+    <img src="" alt="" class="bg-sky-600 w-[45vw] h-[25vh] sm:w-[30vw] sm:h-[40vh]"> -->
+</div>
+</div>
+
+<% include ./partials/footer.ejs %>
