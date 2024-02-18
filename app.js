@@ -13,7 +13,7 @@ const passport = require('passport');
 var app = express();
 
 const store = new MongoDBStore({
-  uri: 'mongodb://localhost:27017/connectify', // Use your MongoDB connection string
+  uri: 'mongodb://127.0.0.1:27017/connectify', // Use your MongoDB connection string
   collection: 'sessions',
 });
 store.on('error', function (error) {
@@ -24,7 +24,7 @@ app.use(expressSession({
   resave: false,
   saveUninitialized: false,
   secret: "hii hello namaste hola",
-  store: store
+  store: store,
 }))
 app.use(passport.initialize());
 app.use(passport.session());
