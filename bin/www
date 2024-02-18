@@ -26,8 +26,8 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-// server.keepAliveTimeout = 120000;  // 120 seconds
-// server.headersTimeout = 120000;    // 120 seconds
+server.keepAliveTimeout = 120000;  // 120 seconds
+server.headersTimeout = 120000;    // 120 seconds
 
 server.listen(port);
 // server.listen(port, '0.0.0.0');
